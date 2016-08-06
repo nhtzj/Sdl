@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="layout_bg_normal">#FCFCFC</color>
+    <color name="windows_bg">#E8E8E8</color>
+    <color name="line_color">#E7E7E7</color>
+    <color name="layout_bg_pressed">#DFDFDF</color>
+
+    <!-- 下拉刷新时，颜色值 -->
+    <color name="swiperefresh_color1">#FF00DDFF</color>
+    <color name="swiperefresh_color2">#FFFFBB33</color>
+    <color name="swiperefresh_color3">#FFFF4444</color>
+    <color name="swiperefresh_color4">#FFAA66CC</color>
+
+    <color name="blue_tex">#5F81BE</color>
+</resources>

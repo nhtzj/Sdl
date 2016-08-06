@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="倪海涛" />
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:layout_marginTop="@dimen/textview_margin_top"
+        android:text="健康噶多说几句啊就是对方空间啊可是对方时代发生地水电费方" />
+
+    <com.nht.sdl.widget.NinePhotoView
+        android:id="@+id/npvPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvContent"
+        android:layout_marginTop="@dimen/textview_margin_top" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/npvPhoto"
+        android:layout_marginTop="@dimen/textview_margin_top"
+        android:gravity="center"
+        android:text="2015-02-05" />
+
+    <TextView
+        android:id="@+id/tvDelete"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/tvTime"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/tvTime"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="@color/blue_tex" />
+
+
+</RelativeLayout>

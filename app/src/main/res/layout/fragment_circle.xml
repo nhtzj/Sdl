@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nht.sdl.fragment.CircleFragment">
+
+    <ListView
+        android:id="@+id/lvContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/line_color"
+        android:dividerHeight="0.5dp"
+        android:scrollbars="none" />
+
+</FrameLayout>
