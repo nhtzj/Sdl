@@ -57,13 +57,20 @@
             android:layout_marginTop="10dp"
             android:text="@string/choose_pic" />
 
+        <Button
+            android:id="@+id/btnDelPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/del_pic" />
+
         <com.nht.sdl.widget.MyGridView
             android:id="@+id/gvPhoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:horizontalSpacing="4dp"
-            android:numColumns="3"
+            android:numColumns="4"
             android:scrollbars="none"
             tools:listitem="@layout/gallery_item" />
 

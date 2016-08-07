@@ -3,6 +3,7 @@ package com.nht.sdl;
 import android.app.Application;
 import android.content.Context;
 
+import com.nht.sdl.utils.MyImageLoader;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -16,10 +17,13 @@ import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
  */
 public class SdlApp extends Application {
 
+    public static MyImageLoader myImageLoader;
+
     @Override
     public void onCreate() {
         super.onCreate();
         initImageLoader(getApplicationContext());
+        myImageLoader = MyImageLoader.build(getApplicationContext());
     }
 
     public void initImageLoader(Context context) {

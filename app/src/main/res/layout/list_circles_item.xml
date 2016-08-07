@@ -45,5 +45,16 @@
         android:text="删除"
         android:textColor="@color/blue_tex" />
 
+    <TextView
+        android:id="@+id/tvChange"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/tvTime"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/tvDelete"
+        android:gravity="center"
+        android:text="修改"
+        android:textColor="@color/blue_tex" />
+
 
 </RelativeLayout>

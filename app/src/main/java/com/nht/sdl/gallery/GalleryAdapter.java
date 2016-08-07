@@ -22,17 +22,6 @@ public class GalleryAdapter extends BaseAdapter {
 
 	private boolean isActionMultiplePick;
 
-	public String getDataString() {
-		StringBuffer buffer = new StringBuffer();
-		for (CustomGallery pic : data) {
-			buffer.append(pic.sdcardPath).append(",");
-		}
-		if (buffer.length()>0){
-			buffer.deleteCharAt(buffer.length()-1);
-		}
-		return buffer.toString();
-	}
-
 	public GalleryAdapter(Context c, ImageLoader imageLoader) {
 		infalter = (LayoutInflater) c
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

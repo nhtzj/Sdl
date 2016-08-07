@@ -1,18 +1,19 @@
 package com.nht.sdl.bean;
 
-import java.util.List;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by Haitao on 2016/8/5.
  */
-public class Message {
+public class Message implements Serializable {
 
     private int id;
     private String name;
     private String content;
     private String time;
     private String ownerId;
-    private List<String> pictures;
+    private ArrayList<String> pictures;
 
     public int getId() {
         return id;
@@ -54,11 +55,11 @@ public class Message {
         this.ownerId = ownerId;
     }
 
-    public List<String> getPictures() {
+    public ArrayList<String> getPictures() {
         return pictures;
     }
 
-    public void setPictures(List<String> pictures) {
+    public void setPictures(ArrayList<String> pictures) {
         this.pictures = pictures;
     }
 }

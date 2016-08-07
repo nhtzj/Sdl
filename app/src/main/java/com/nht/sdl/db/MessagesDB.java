@@ -62,17 +62,29 @@ public class MessagesDB {
         return datas;
     }
 
-    private List<String> strToList(String str) {
+    private ArrayList<String> strToList(String str) {
         if (TextUtils.isEmpty(str)) {
             return new ArrayList<>();
         }
         String[] split = str.split(",");
-        return Arrays.asList(split);
+
+        return new ArrayList<String>(Arrays.asList(split));
     }
 
     public synchronized boolean deleteWithId(int id) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         int count = db.delete("tblMessages", "_id=?", new String[]{String.valueOf(id)});
+        db.close();
+        if (count > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public synchronized boolean updateWithId(int id, ContentValues values) {
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        int count = db.update("tblMessages", values, "_id=?", new String[]{String.valueOf(id)});
         db.close();
         if (count > 0) {
             return true;

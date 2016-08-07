@@ -1,5 +1,6 @@
 package com.nht.sdl.adapter;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 import com.nht.sdl.R;
 import com.nht.sdl.base.BaseListAdapter;
 import com.nht.sdl.bean.Message;
-import com.nht.sdl.interf.OnDeleteListener;
+import com.nht.sdl.interf.OnCirclesListener;
 import com.nht.sdl.utils.DeviceUtils;
 import com.nht.sdl.widget.NinePhotoView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -24,11 +25,13 @@ import butterknife.ButterKnife;
  * Created by Haitao on 2016/8/6.
  */
 public class CirclesAdapter extends BaseListAdapter<Message> {
-    private OnDeleteListener mListener;
+    private OnCirclesListener mListener;
     private DisplayImageOptions options;
     private ImageLoader mLoader;
+    private Activity context;
 
-    public CirclesAdapter() {
+    public CirclesAdapter(Activity context) {
+        this.context=context;
         mLoader = ImageLoader.getInstance();
         options = new DisplayImageOptions.Builder()
                 .showImageForEmptyUri(R.mipmap.ic_launcher)
@@ -41,7 +44,7 @@ public class CirclesAdapter extends BaseListAdapter<Message> {
                 .build();
     }
 
-    public void addOnDeleteListener(OnDeleteListener mListener) {
+    public void addOnDeleteListener(OnCirclesListener mListener) {
         this.mListener = mListener;
     }
 
@@ -94,9 +97,20 @@ public class CirclesAdapter extends BaseListAdapter<Message> {
                             .setNegativeButton("取消", null).show();
                 }
             });
+            viewHolder.tvChange.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        mListener.change(position, message);
+                    }
+                }
+            });
+
         } else {
             viewHolder.tvDelete.setVisibility(View.GONE);
+            viewHolder.tvChange.setVisibility(View.GONE);
         }
+
 
     }
 
@@ -112,6 +126,8 @@ public class CirclesAdapter extends BaseListAdapter<Message> {
         TextView tvTime;
         @BindView(R.id.tvDelete)
         TextView tvDelete;
+        @BindView(R.id.tvChange)
+        TextView tvChange;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
